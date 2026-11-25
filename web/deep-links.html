@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prueba externa · Navigation Lab</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f8f9fb; color: #171021; font: 18px/1.6 sans-serif; }
+    header { background: #6429cd; color: white; padding: 32px 24px; }
+    main { max-width: 720px; margin: auto; padding: 24px; }
+    h1 { font-size: 32px; line-height: 1.2; }
+    article { background: white; padding: 24px; margin: 20px 0; border: 1px solid #e3e6ec; border-radius: 24px; }
+    a { display: inline-block; background: #6429cd; color: white; border-radius: 999px; padding: 12px 24px; text-decoration: none; }
+    code { overflow-wrap: anywhere; }
+    small { display: block; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>NAVIGATION LAB / PRUEBA EXTERNA</div>
+    <h1>Este enlace abre otra app.</h1>
+    <p>Estás en Chrome, no dentro de Flutter. Pulsa un enlace para que Android abra la demo.</p>
+  </header>
+  <main>
+    <p>Primero instala la app con <code>flutter run</code> (main.dart o main_nav2.dart),
+      o <code>flutter run -t lib/main_nav3.dart</code> para la versión con go_router.
+      Usa esta página desde Chrome en el emulador Android.</p>
+    <article>
+      <h2>1. Ir directamente a un producto</h2>
+      <p>Resultado: detalle del producto 42. Al volver atrás verás Productos y luego Inicio.</p>
+      <a href="navdemo://app/products/42">Abrir producto 42</a>
+      <small><code>navdemo://app/products/42</code></small>
+    </article>
+    <article>
+      <h2>2. Abrir una pantalla privada</h2>
+      <p>Sin sesión: primero Login, después Perfil. Con sesión: directamente Perfil.
+        La sesión es simulada y se pierde al reiniciar el proceso.</p>
+      <a href="navdemo://app/profile">Abrir mi perfil</a>
+      <small><code>navdemo://app/profile</code></small>
+    </article>
+    <article>
+      <h2>3. Un enlace equivocado</h2>
+      <p>Resultado: una pantalla 404 que explica el error y ofrece volver al inicio.</p>
+      <a href="navdemo://app/no-existe">Probar enlace roto</a>
+      <small><code>navdemo://app/no-existe</code></small>
+    </article>
+    <p>Prueba con la app cerrada y luego con ella abierta. Pegar texto en cualquier app
+      no lo abre automáticamente: se necesita una app que permita pulsar enlaces de este tipo.</p>
+  </main>
+</body>
+</html>
